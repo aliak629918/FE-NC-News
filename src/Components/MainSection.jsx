@@ -1,4 +1,7 @@
 import Articles from "./Articles";
+
+
+
 function MainSection() {
     return (
         <div>

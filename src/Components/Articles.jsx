@@ -1,13 +1,14 @@
 import Article from "./Article"
 import { useState, useEffect } from "react";
 import {Link} from "react-router-dom"
+import { getAllArticles } from "./api";
+
 function Articles() {
     const [articles, setArticles] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-    useEffect(() => {
-        fetch("https://long-blue-snapper-robe.cyclic.app/api/articles") 
-     .then((response) => response.json()
-     ).then((data) => {
+    useEffect(() => { 
+        getAllArticles()
+        .then((data) => {
          setArticles(data.articles)
          setIsLoading(false)
      });
