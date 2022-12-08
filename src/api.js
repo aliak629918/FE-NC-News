@@ -18,3 +18,11 @@ const newsApi = axios.create({
         return res.data.article;
     });
 };
+
+export const getCommentsById = (article_id) => {
+    return axios
+    .get(`https://long-blue-snapper-robe.cyclic.app/api/articles/${article_id}/comments`)
+    .then((res) => {
+        return res.data.comments;
+    })
+}
