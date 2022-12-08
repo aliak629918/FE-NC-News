@@ -21,9 +21,9 @@ function Comments() {
          }, [article_id])
         
          console.log(comments)
-         return isLoading ? (<p>Loading!</p>) : comments === undefined ? (<p>No Comments for this Article </p>) : ( 
+         return isLoading ? (<p>Loading!</p>) : comments.length === 0 ? (<p>No Comments for this Article </p>) : ( 
             <div>  
-    <h3>Comments for Article {`${comments[0].article_id}`}</h3>
+    <h3>Comments for Article {article_id}</h3>
         <ul>
             {comments.map((comment) => {
                 const createdAt = new Date(comment.created_at);

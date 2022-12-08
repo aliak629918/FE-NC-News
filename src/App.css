@@ -36,7 +36,9 @@ ul {
   list-style: none;
 }
 
-
+li {
+  margin-right: 30px;
+}
 
 .ArticleList {
     border: 1px solid black ;
