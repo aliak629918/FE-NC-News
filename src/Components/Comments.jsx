@@ -20,7 +20,6 @@ function Comments() {
          });}
          }, [article_id])
         
-         console.log(comments)
          return isLoading ? (<p>Loading!</p>) : comments.length === 0 ? (<p>No Comments for this Article </p>) : ( 
             <div>  
     <h3>Comments for Article {article_id}</h3>

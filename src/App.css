@@ -49,6 +49,24 @@ li {
     margin-bottom: 10px;
 }
 
+#article-card {
+  border: 1px solid black;
+}
+.ArticleBody {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 5px;
+}
+
+button {
+  margin: 20px;
+  font-size: larger;
+}
+.VoteButtons {
+  
+  text-align: center;
+  
+}
 .CommentList {
   border: 1px solid black ;
     padding-top: 10px;

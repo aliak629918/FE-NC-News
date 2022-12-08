@@ -26,3 +26,11 @@ export const getCommentsById = (article_id) => {
         return res.data.comments;
     })
 }
+
+export const patchVotesById = (article_id, vote) => {
+    return newsApi
+    .patch(`${article_id}`, { inc_votes: vote})
+    .then((res) => {
+        return res.data;
+    })
+}
