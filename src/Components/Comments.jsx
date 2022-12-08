@@ -19,9 +19,9 @@ function Comments() {
                 setIsLoading(false)
          });}
          }, [article_id])
-
-         console.log(comments[0])
-         return isLoading ? (<p>Loading!</p>) : ( 
+        
+         console.log(comments)
+         return isLoading ? (<p>Loading!</p>) : comments === undefined ? (<p>No Comments for this Article </p>) : ( 
             <div>  
     <h3>Comments for Article {`${comments[0].article_id}`}</h3>
         <ul>
