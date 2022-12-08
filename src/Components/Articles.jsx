@@ -1,7 +1,7 @@
 import Article from "./Article"
 import { useState, useEffect } from "react";
 import {Link} from "react-router-dom"
-import { getAllArticles } from "./api";
+import { getAllArticles } from "../api";
 
 function Articles() {
     const [articles, setArticles] = useState([])

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import { getArticleById } from "./api"
+import { getArticleById } from "../api"
+import Comments from './Comments'
 
 function Article({articles}) {
         const {article_id} = useParams()
@@ -16,19 +17,18 @@ function Article({articles}) {
             if(article_id !== undefined) { 
             getArticleById(article_id)
             .then((data) => {
-                console.log(data)
              setCurrentArticle(data)
              setIsLoading(false)
          });}
          }, [article_id])
             
-         console.log(currentArticle)
          return isLoading ? <p>Loading!</p> : (
         <div id="article-card">
       <h1 id="article-card-title">{currentArticle.title}</h1>
       <p>Author: {currentArticle.author}</p>
       <p>Date: {`${dt} ${month} ${year}`}</p>
       <p>{currentArticle.body}</p>
+      <Comments />
      </div>
     )
 }
