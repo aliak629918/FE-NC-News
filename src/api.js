@@ -29,7 +29,7 @@ export const getCommentsById = (article_id) => {
 
 export const patchVotesById = (article_id, vote) => {
     return newsApi
-    .patch(`${article_id}`, { inc_vote: vote})
+    .patch(`${article_id}`, { inc_votes: vote})
     .then((res) => {
         return res.data;
     })
