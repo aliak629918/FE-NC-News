@@ -34,3 +34,14 @@ export const patchVotesById = (article_id, vote) => {
         return res.data;
     })
 }
+
+export const postComment = (article_id, body, username) => {
+    return axios
+      .post(
+        `https://long-blue-snapper-robe.cyclic.app/api/articles/${article_id}/comments`,
+        { username: username, body: body }
+      )
+      .then((res) => {
+        return res.data.comment;
+      });
+  };

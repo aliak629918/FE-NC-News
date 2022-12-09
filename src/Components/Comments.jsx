@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import { getCommentsById } from "../api"
+import PostComment from "./PostComment"
+
 
 
 
@@ -20,8 +22,9 @@ function Comments() {
          });}
          }, [article_id])
         
-         return isLoading ? (<p>Loading!</p>) : comments.length === 0 ? (<p>No Comments for this Article </p>) : ( 
+         return isLoading ? (<p>Loading!</p>) : comments.length === 0 ? (<div><p>No Comments for this Article </p> <PostComment /></div> ) : ( 
             <div>  
+                <PostComment setComments={setComments}/>
     <h3>Comments for Article {article_id}</h3>
         <ul>
             {comments.map((comment) => {
