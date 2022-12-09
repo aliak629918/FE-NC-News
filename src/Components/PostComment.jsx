@@ -8,38 +8,36 @@ function PostComment({setComments}) {
     const [newBody, setNewBody] = useState("");
     const { article_id } = useParams();
     const  {loggedInUser}  = useContext(UserContext);
-    console.log(loggedInUser)
-    
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleClick = (event) => {
+        event.preventDefault();
+        setNewBody("")
         postComment(article_id, newBody, loggedInUser.username).then((comment) => {
           return setComments((allComments) => [comment, ...allComments]);
         });
-    };
-
-    const handleClick = () => {
         const button = document.getElementById("btn");
+        event.currentTarget.disabled = true;
+
         button.textContent = "Comment posted!";
+
       };
-       
     return(
         <div>
             <section>
-                <form method="post" onSubmit={handleSubmit}>
+                <form method="post" onSubmit={handleClick}>
                     <h3>Comment On This Article</h3>
-                    <input value={newBody} onChange={(event) => {
+                    <textarea value={newBody} id="commenbody" onChange={(event) => {
                         setNewBody(event.target.value);
                     }}
+                    
                     type="text"
-                    id="commentbody"
                     name="commentbody"
                     minLength="1"
                     maxLength="5000"
                     required
                     />
                     <br />
-                    <button id="btn" onClick={handleClick}>
+                    <button id="btn" type="submit" onClick={handleClick}>
                         Post Comment
                     </button>
                 </form>
