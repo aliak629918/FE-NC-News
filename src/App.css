@@ -18,6 +18,10 @@ h1 {
     text-align: center;
 
 }
+
+h3 {
+  text-align: center;
+}
 .Title {
   padding-right: 30px;
 }
@@ -37,6 +41,7 @@ ul {
 }
 
 li {
+  text-align: center;
   margin-right: 30px;
 }
 
@@ -47,6 +52,9 @@ li {
     list-style: none;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+.ArticlesDate {
+  text-align: center;
 }
 
 #article-card {
@@ -74,4 +82,10 @@ button {
     list-style: none;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+Votes {
+  text-align: center;
+}
+form {
+  text-align: center;
 }

@@ -33,7 +33,7 @@ function Articles() {
               <h2>{article.title}</h2>{" "}
             </Link>
                     <h3>Author - {article.author}</h3>
-                    <p>{`${dt}.${month}.${year} ${time}`}</p>
+                    <p className="ArticlesDate">Date Created: {`${dt}.${month}.${year} ${time}`}</p>
                     </div>
             </li>)
     
